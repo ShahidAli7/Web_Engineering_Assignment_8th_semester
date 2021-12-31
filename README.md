@@ -1,32 +1,47 @@
-<?php
-session_start();
-if (isset($_SESSION['todo'])) {
-}
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-
-<body>
-    <?php include_once('navbar.php') ?>
-    <div class="container">
-
-        <?php require_once('components.php');
-        getPosts();
-        ?>
-
-    </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
+# Todo and Blog Application
 
-</html>
+In this assignemnt-based project, I have implemented a session based Todo and Blog application using PDO's approch.
+
+## Salient Features
+
+- Session based Todo App implemention.
+- Blog App using PDO.
+- Session based authentication mechanism.
+- Only logged in users can post new blogs.
+- Read blog page is set public.
+
+Using given below credentials, one can post blog using local server, email me at <faisalkhanwaso1122@gmail.com> to get list of users of live server.
+
+```php
+    $users = array(
+        array("user" => "user1@blog.com", "pass" => "pass1", "name" => "shahrukh"),
+        array("user" => "user2@blog.com", "pass" => "pass2", "name" => "aamir"),
+        array("user" => "user3@blog.com", "pass" => "pass3", "name" => "Salman"),
+    );
+```
+
+## How to setup and run the code
+
+Clone this repo using `git clone https://github.com/Faisal123456789012/web-engineering-assignment-8th-semester/edit/main/README.md` in htdoc. There is a file [dbSetup.php](dbSetup.php) in root directory, which will generate a dummy database with some record to test the blog side of application. Run it on localhost using [http://localhost/todo&blog-app/dbSetup.php](http://localhost/todo&blog-app/dbSetup.php) url.
+
+## How to run the application
+
+- Open browser and visit [http://localhost/todo&blog-app](http://localhost/todo&blog-app) and test it on local server.
+- One copy of this code is also deployed on live server at [https://todo-blog.000webhostapp.com/](https://todo-blog.000webhostapp.com/)
+
+## Odds
+
+- Some logical fixes are still pending to do...will fix soon.
+
+## Screenshots
+
+Navbar when there is a guest user.
+![Logged-out Navbar](imgs/logged-out.png)
+Navbar when there is a logged-in user.
+![Logged-in Navbar](imgs/logged-in.png)
+On home page there display components of Todo and Read blog are imported from [components.php](components.php) and these same components are used in [todo.php](todo.php) and [blog.php](blog.php), respectively.
+![Home Page](imgs/home-page.png)
+On [Todo Page](todo.php) there is a add task component with display Todo component.
+![Todo Page](imgs/todo-page.png)
